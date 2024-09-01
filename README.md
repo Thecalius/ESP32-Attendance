@@ -33,84 +33,84 @@ This project provides a simple and efficient way to track attendance using an RF
 - [VS Code](https://code.visualstudio.com/) (recommended IDE)
 - [Arduino IDE](https://www.arduino.cc/en/software) (optional)
 
-##Installation and Setup
+## Installation and Setup
 
-##Cloning the Repository
+### Cloning the Repository
 First, clone the project repository from GitHub to your local machine:
 
-bash
-Copy code
+```
 git clone https://github.com/your-username/esp32-rfid-attendance.git
 cd esp32-rfid-attendance
-Setting Up the Flask Server
-Navigate to the Flask server directory:
+```
+### Setting Up the Flask Server
+1. Navigate to the Flask server directory:
 
-bash
-Copy code
+```
 cd server
-Install the required Python packages:
+```
+2. Install the required Python packages:
 
 You can install the dependencies by running:
 
-bash
-Copy code
+```
 pip install -r requirements.txt
-Ensure the index.html file is placed in the templates folder:
+```
+3. Ensure the index.html file is placed in the templates folder:
 
 The Flask server requires an index.html file to serve the web interface. This file should be located in a templates directory within the same folder as server.py.
 
-Run the Flask server:
+4. Run the Flask server:
 
 Start the server by running:
 
-bash
-Copy code
+```
 python server.py
-The server will be accessible at http://localhost:5000.
+```
+The server will be accessible at http://localhost:8000.
 
-Configuring the ESP32 Code
-Open the project in VS Code with PlatformIO:
+## Configuring the ESP32 Code
+1. Open the project in VS Code with PlatformIO:
 
 Launch VS Code, and open the project folder.
 
-Update the Wi-Fi credentials:
+3. Update the Wi-Fi credentials:
 
 In the ESP32 code, find and modify the following lines to match your Wi-Fi network name and password:
 
-cpp
-Copy code
+```
 const char* ssid = "Your Network Name";  // Network's name (Service Set Identifier)
-const char* wifi_password = "Your Wi-Fi Password"; 
-Ensure the correct port and board are selected:
+const char* wifi_password = "Your Wi-Fi Password";
+```
+3. Ensure the correct port and board are selected:
 
 Make sure your ESP32 board is properly selected in PlatformIO, and the correct port is chosen for uploading the code.
 
-Building and Uploading Code to ESP32
-Build the project:
+# Building and Uploading Code to ESP32
+1. Build the project:
 
 In VS Code with PlatformIO, click on the "PlatformIO: Build" button in the bottom bar or run:
 
-bash
-Copy code
+```
 platformio run
-Upload the code to ESP32:
+```
+2. Upload the code to ESP32:
 
 Connect your ESP32 to your computer via USB and click the "PlatformIO: Upload" button, or run:
 
-bash
-Copy code
+```
 platformio run --target upload
+```
 The code will be compiled and uploaded to your ESP32 board.
 
-Usage
-Power on the ESP32 and ensure it is connected to the Wi-Fi network.
-Tap an RFID tag on the RC522 module.
-The ESP32 will send the RFID data to the Flask server, which logs the clock-in or clock-out time.
-Project Structure
+# Usage
+1. Power on the ESP32 and ensure it is connected to the Wi-Fi network.
+2. Tap an RFID tag on the RC522 module.
+3. The ESP32 will send the RFID data to the Flask server, which logs the clock-in or clock-out time.
+
+# Project Structure
 Here's an overview of the main files and directories in this project:
 
-bash
-Copy code
+```
 esp32-rfid-attendance/
 │
 ├── server/
@@ -125,8 +125,10 @@ esp32-rfid-attendance/
 │
 ├── README.md                  # This README file
 └── .gitignore                 # Files and directories to ignore in git
-Contributing
+```
+
+# Contributing
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you have suggestions or bug reports.
 
-License
+# License
 This project is licensed under the MIT License - see the LICENSE file for details.
