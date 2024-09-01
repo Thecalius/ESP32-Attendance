@@ -100,7 +100,7 @@ First, clone the project repository from GitHub to your local machine:
     ```
     platformio run --target upload
     ```
-The code will be compiled and uploaded to your ESP32 board.
+    The code will be compiled and uploaded to your ESP32 board.
 
 # Usage
 1. Power on the ESP32 and ensure it is connected to the Wi-Fi network.
