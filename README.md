@@ -37,11 +37,11 @@ This project provides a simple and efficient way to track attendance using an RF
 
 ### Cloning the Repository
 First, clone the project repository from GitHub to your local machine:
-
     ```
     git clone https://github.com/your-username/esp32-rfid-attendance.git
     cd esp32-rfid-attendance
     ```
+    
 ### Setting Up the Flask Server
 1. Navigate to the Flask server directory:
 
