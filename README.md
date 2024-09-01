@@ -7,6 +7,7 @@ This project is an attendance system using an ESP32 microcontroller and an RFID-
 - [ ] Populate a spreadsheet with data (.csv maybe?)
 - [ ] Create a GUI
 - [ ] Make it a .exe
+- [ ] The HTML seems bad, make it better
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -127,10 +128,11 @@ esp32-rfid-attendance/
 │
 ├── src/
 │   ├── main.cpp               # Main code for the ESP32
-│   └── platformio.ini         # PlatformIO configuration file
+│   
 │
 ├── README.md                  # This README file
 └── .gitignore                 # Files and directories to ignore in git
+└── platformio.ini             # PlatformIO configuration file
 ```
 
 # Contributing
