@@ -3,7 +3,8 @@ Components
 ESP32 Dev Board
 RFID-RC522
 NFC Tag
-LED
+LEDs (1 Green, 1 Red)
+2x 220 Ohm resistors
 Buzzer
 USB C cable that supports data transfer
 Jumper wires
