@@ -1,37 +1,41 @@
-#ESP32 RFID Attendance System
+# ESP32 RFID Attendance System
 
 This project is an attendance system using an ESP32 microcontroller and an RFID-RC522 module. By tapping an RFID tag, users can clock in and clock out. The data is sent to a Flask server, which logs the attendance information.
 
-Table of Contents
-Introduction
-Hardware Requirements
-Software Requirements
-Installation and Setup
-Cloning the Repository
-Setting Up the Flask Server
-Configuring the ESP32 Code
-Building and Uploading Code to ESP32
-Usage
-Project Structure
-Contributing
-License
-Introduction
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Hardware Requirements](#hardware-requirements)
+3. [Software Requirements](#software-requirements)
+4. [Installation and Setup](#installation-and-setup)
+    - [Cloning the Repository](#cloning-the-repository)
+    - [Setting Up the Flask Server](#setting-up-the-flask-server)
+    - [Configuring the ESP32 Code](#configuring-the-esp32-code)
+5. [Building and Uploading Code to ESP32](#building-and-uploading-code-to-esp32)
+6. [Usage](#usage)
+7. [Project Structure](#project-structure)
+8. [Contributing](#contributing)
+9. [License](#license)
+    
+## Introduction
 This project provides a simple and efficient way to track attendance using an RFID tag and an ESP32 microcontroller. The system logs clock-in and clock-out times on a Flask server and can be extended to include more advanced features.
 
-Hardware Requirements
-ESP32 microcontroller
-RFID-RC522 module
-RFID tags
-Breadboard and jumper wires
-Power supply (e.g., USB cable)
-Software Requirements
-Python 3.x (for running the Flask server)
-Flask (Python web framework)
-PlatformIO (for building and uploading code to ESP32)
-VS Code (recommended IDE)
-Arduino IDE (optional)
-Installation and Setup
-Cloning the Repository
+## Hardware Requirements
+- ESP32 microcontroller
+- RFID-RC522 module
+- RFID tags
+- Breadboard and jumper wires
+- Power supply (e.g., USB cable)
+
+## Software Requirements
+- [Python 3.x](https://www.python.org/downloads/) (for running the Flask server)
+- [Flask](https://flask.palletsprojects.com/) (Python web framework)
+- [PlatformIO](https://platformio.org/) (for building and uploading code to ESP32)
+- [VS Code](https://code.visualstudio.com/) (recommended IDE)
+- [Arduino IDE](https://www.arduino.cc/en/software) (optional)
+
+##Installation and Setup
+
+##Cloning the Repository
 First, clone the project repository from GitHub to your local machine:
 
 bash
