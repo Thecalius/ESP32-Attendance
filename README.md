@@ -1,4 +1,5 @@
 #ESP32 RFID Attendance System
+
 This project is an attendance system using an ESP32 microcontroller and an RFID-RC522 module. By tapping an RFID tag, users can clock in and clock out. The data is sent to a Flask server, which logs the attendance information.
 
 Table of Contents
