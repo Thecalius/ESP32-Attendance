@@ -38,68 +38,68 @@ This project provides a simple and efficient way to track attendance using an RF
 ### Cloning the Repository
 First, clone the project repository from GitHub to your local machine:
 
-```
-git clone https://github.com/your-username/esp32-rfid-attendance.git
-cd esp32-rfid-attendance
-```
+    ```
+    git clone https://github.com/your-username/esp32-rfid-attendance.git
+    cd esp32-rfid-attendance
+    ```
 ### Setting Up the Flask Server
 1. Navigate to the Flask server directory:
 
-```
-cd server
-```
+    ```
+    cd server
+    ```
 2. Install the required Python packages:
 
-You can install the dependencies by running:
+    You can install the dependencies by running:
 
-```
-pip install -r requirements.txt
-```
+    ```
+    pip install -r requirements.txt
+    ```
 3. Ensure the index.html file is placed in the templates folder:
 
-The Flask server requires an index.html file to serve the web interface. This file should be located in a templates directory within the same folder as server.py.
+    The Flask server requires an index.html file to serve the web interface. This file should be located in a templates directory within the same folder as         server.py.
 
 4. Run the Flask server:
 
-Start the server by running:
+    Start the server by running:
 
-```
-python server.py
-```
-The server will be accessible at http://localhost:8000.
+    ```
+    python server.py
+    ```
+    The server will be accessible at http://localhost:8000.
 
 ## Configuring the ESP32 Code
 1. Open the project in VS Code with PlatformIO:
 
-Launch VS Code, and open the project folder.
+    Launch VS Code, and open the project folder.
 
 3. Update the Wi-Fi credentials:
 
-In the ESP32 code, find and modify the following lines to match your Wi-Fi network name and password:
+    In the ESP32 code, find and modify the following lines to match your Wi-Fi network name and password:
 
-```
-const char* ssid = "Your Network Name";  // Network's name (Service Set Identifier)
-const char* wifi_password = "Your Wi-Fi Password";
-```
+    ```
+    const char* ssid = "Your Network Name";  // Network's name (Service Set Identifier)
+    const char* wifi_password = "Your Wi-Fi Password";
+    ```
 3. Ensure the correct port and board are selected:
 
-Make sure your ESP32 board is properly selected in PlatformIO, and the correct port is chosen for uploading the code.
+    Make sure your ESP32 board is properly selected in PlatformIO, and the correct port is chosen for uploading the code.
 
 # Building and Uploading Code to ESP32
 1. Build the project:
 
-In VS Code with PlatformIO, click on the "PlatformIO: Build" button in the bottom bar or run:
-
-```
-platformio run
-```
+    In VS Code with PlatformIO, click on the "PlatformIO: Build" button in the bottom bar or run:
+    
+    ```
+    platformio run
+    ```
 2. Upload the code to ESP32:
 
-Connect your ESP32 to your computer via USB and click the "PlatformIO: Upload" button, or run:
+    Connect your ESP32 to your computer via USB and click the "PlatformIO: Upload" button, or run:
 
-```
-platformio run --target upload
-```
+    ```
+    platformio run --target upload
+    ```
 The code will be compiled and uploaded to your ESP32 board.
 
 # Usage
