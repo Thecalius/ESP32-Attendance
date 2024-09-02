@@ -1,37 +1,4 @@
-#include <Arduino.h>
-#include <WiFi.h>
-#include <HTTPClient.h>
-#include <MFRC522.h>
-#include <map>
-#include <time.h>
-
-// INDICATORS
-#define GREENLED_PIN 2
-#define REDLED_PIN 16
-#define BUZZER_PIN 14
-
-// SET/ RESET PINS
-#define SDA_PIN 5  // Slave Select (SS) or Chip Select (CS): It selects the RFID reader as the active device of the SPI bus
-#define RST_PIN 22 // Bring this LOW to reset the module
-
-// TAGS
-const String BLACK_TAG = "5eca5651";
-const String GREEN_TAG = "fc2c1fcf";
-const String RED_TAG = "6e774161";
-const String WHITE_TAG = "9cd1e05d";
-const String BLUE_TAG = "8a1a165";
-
-std::map<String, String> tagMessages = {
-  {BLACK_TAG, "Black Tag"},
-  {GREEN_TAG, "Green Tag"},
-  {RED_TAG, "Red Tag"},
-  {WHITE_TAG, "White Tag"},
-  {BLUE_TAG, "Blue Tag"}
-};
-
-const char* ssid = "Network Name";  // Network's name (Service Set Identifier)
-const char* wifi_password = "wifi_password"; 
-const char* server_name = "http://192.168.2.10:8000/log";
+#include <constants.hpp>
 
 std::map<String, bool> tagState; // Map to store the state of each tag (logged in or out)
 
@@ -50,16 +17,8 @@ void setup() {
   digitalWrite(REDLED_PIN, LOW);
   tone(BUZZER_PIN, 1000, 500);
 
-  WiFi.begin(ssid, wifi_password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
+  connected = connectWifi();
 
-  Serial.println();
-  Serial.println("Connected to WiFi...");
-  Serial.print("IP Address: ");
-  Serial.println(WiFi.localIP());
 }
 
 void loop() {
@@ -198,4 +157,26 @@ String currentTime() {
   strftime(timeString, sizeof(timeString), "%H:%M:%S %Y-%m-%d", &timeinfo);
 
   return String(timeString);
+}
+
+bool connectWifi() {
+
+  size_t connectAttempts = 0;
+
+  WiFi.begin(ssid, wifi_password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+    connectAttempts++;
+    if reconnects >= MAX_RECONNECTS {
+      Serial.println("DEBUG - Failed to connect");
+      return false;
+    }
+  }
+
+  Serial.println();
+  Serial.println("Connected to WiFi...");
+  Serial.print("IP Address: ");
+  Serial.println(WiFi.localIP());
+  return true;
 }
